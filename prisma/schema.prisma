@@ -1,0 +1,144 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// МОДЕЛЬ: User (Пользователи)
+// ============================================
+model User {
+  id        String  @id @default(cuid())
+  email     String  @unique
+  name      String?
+  password  String? // Хешированный пароль (null для OAuth)
+  avatarUrl String? @map("avatar_url")
+  role      String  @default("user") // "user", "editor", "admin"
+
+  // OAuth
+  provider String? // "local", "google", "github"
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Отношения
+  articles Article[]
+  comments Comment[]
+
+  @@map("users")
+}
+
+// ============================================
+// МОДЕЛЬ: Category (Категории статей)
+// ============================================
+model Category {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  slug        String  @unique
+  description String?
+  icon        String? // Emoji или иконка
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Отношения
+  articles Article[]
+
+  @@map("categories")
+}
+
+// ============================================
+// МОДЕЛЬ: Article (Статьи)
+// ============================================
+model Article {
+  id         String  @id @default(cuid())
+  title      String
+  slug       String  @unique
+  content    String  @db.Text
+  excerpt    String? @db.Text
+  coverImage String? @map("cover_image")
+
+  // Статус публикации
+  status String @default("draft") // "draft", "published", "archived"
+
+  // SEO
+  metaTitle       String? @map("meta_title")
+  metaDescription String? @map("meta_description")
+
+  // Статистика
+  viewCount Int @default(0) @map("view_count")
+
+  // Timestamps
+  publishedAt DateTime? @map("published_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  // Отношения
+  authorId String @map("author_id")
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  categoryId String   @map("category_id")
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  comments Comment[]
+  tags     Tag[]
+
+  @@index([authorId])
+  @@index([categoryId])
+  @@index([status])
+  @@index([publishedAt])
+  @@map("articles")
+}
+
+// ============================================
+// МОДЕЛЬ: Tag (Теги)
+// ============================================
+model Tag {
+  id   String @id @default(cuid())
+  name String @unique
+  slug String @unique
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+
+  // Отношения
+  articles Article[]
+
+  @@map("tags")
+}
+
+// ============================================
+// МОДЕЛЬ: Comment (Комментарии)
+// ============================================
+model Comment {
+  id      String @id @default(cuid())
+  content String @db.Text
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Отношения
+  authorId String @map("author_id")
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  articleId String  @map("article_id")
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  // Древовидные комментарии (ответы)
+  parentId String?   @map("parent_id")
+  parent   Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies  Comment[] @relation("CommentReplies")
+
+  @@index([authorId])
+  @@index([articleId])
+  @@index([parentId])
+  @@map("comments")
+}

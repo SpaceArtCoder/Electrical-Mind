@@ -39,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/app/generated/prisma
+
+electrical-mind.code-workspace
+
+.gitignore
+
+next.steps.txt
+
+package-lock.json
+
+risma.config.ts
+
+next.config.ts
+
+next-env.d.ts
+
+eslint.config.mjs
+
+/prisma/migrations
+
+/prisma/seed.ts

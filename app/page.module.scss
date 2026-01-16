@@ -1,0 +1,253 @@
+// app/page.module.scss
+
+// Переменные
+$primary-gradient: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%);
+$border-color: #e5e7eb;
+$border-color-dark: #374151;
+$text-primary: #111827;
+$text-secondary: #6b7280;
+$text-primary-dark: #f9fafb;
+$text-secondary-dark: #9ca3af;
+$hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;
+
+// Контейнер
+.container {
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+// Хедер
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: $primary-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+
+  @media (min-width: 768px) {
+    font-size: 3.75rem;
+  }
+}
+
+.titleIcon {
+  display: inline-block;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $text-secondary;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  }
+}
+
+// Общие стили секций
+.categoriesSection,
+.articlesSection {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: $text-primary;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-primary-dark;
+  }
+}
+
+// Категории
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.categoryCard {
+  padding: 1.5rem;
+  border: 1px solid $border-color;
+  border-radius: 0.75rem;
+  transition: $transition;
+  cursor: pointer;
+  background: #ffffff;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: #1f2937;
+    border-color: $border-color-dark;
+
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.categoryIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.categoryName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: $text-primary;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-primary-dark;
+  }
+}
+
+.categoryDescription {
+  font-size: 0.875rem;
+  color: $text-secondary;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  }
+}
+
+// Статьи
+.articlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.articleCard {
+  padding: 1.5rem;
+  border: 1px solid $border-color;
+  border-radius: 0.75rem;
+  transition: $transition;
+  background: #ffffff;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: #1f2937;
+    border-color: $border-color-dark;
+
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.articleMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: $text-secondary;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  }
+}
+
+.metaIcon {
+  font-size: 1rem;
+}
+
+.metaText {
+  // Inherit from parent
+}
+
+.metaSeparator {
+  color: $text-secondary;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  }
+}
+
+.articleTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: $text-primary;
+  line-height: 1.3;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-primary-dark;
+  }
+}
+
+.articleExcerpt {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+
+  @media (prefers-color-scheme: dark) {
+    color: #d1d5db;
+  }
+}
+
+.articleStats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid $border-color;
+
+  @media (prefers-color-scheme: dark) {
+    border-top-color: $border-color-dark;
+  }
+}
+
+.viewCount {
+  font-size: 0.875rem;
+  color: $text-secondary;
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-secondary-dark;
+  }
+}

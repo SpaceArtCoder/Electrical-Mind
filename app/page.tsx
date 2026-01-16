@@ -1,66 +1,98 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// app/page.tsx
+import prisma from '@/lib/prisma'
+import styles from './page.module.scss'
 
-export default function Home() {
+export const dynamic = 'force-dynamic'
+
+async function getArticles() {
+  return await prisma.article.findMany({
+    where: { status: 'published' },
+    include: {
+      author: { select: { name: true, email: true } },
+      category: { select: { name: true, slug: true, icon: true } }
+    },
+    orderBy: { publishedAt: 'desc' },
+    take: 10
+  })
+}
+
+async function getCategories() {
+  return await prisma.category.findMany({
+    orderBy: { name: 'asc' }
+  })
+}
+
+export default async function Home() {
+  const [articles, categories] = await Promise.all([
+    getArticles(),
+    getCategories()
+  ])
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+      <main className={styles.container}>
+        <header className={styles.header}>
+          <h1 className={styles.title}>
+            <span className={styles.titleIcon}>⚡</span>
+            Electrical Mind
+          </h1>
+          <p className={styles.subtitle}>
+            Портал о высоких технологиях будущего
           </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </header>
+
+        {/* Категории */}
+        <section className={styles.categoriesSection}>
+          <h2 className={styles.sectionTitle}>Категории</h2>
+          <div className={styles.categoriesGrid}>
+            {categories.map((category) => (
+                <div
+                    key={category.id}
+                    className={styles.categoryCard}
+                >
+                  <div className={styles.categoryIcon}>{category.icon}</div>
+                  <h3 className={styles.categoryName}>{category.name}</h3>
+                  {category.description && (
+                      <p className={styles.categoryDescription}>
+                        {category.description}
+                      </p>
+                  )}
+                </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Статьи */}
+        <section className={styles.articlesSection}>
+          <h2 className={styles.sectionTitle}>Последние статьи</h2>
+          <div className={styles.articlesList}>
+            {articles.map((article) => (
+                <article
+                    key={article.id}
+                    className={styles.articleCard}
+                >
+                  <div className={styles.articleMeta}>
+                    <span className={styles.metaIcon}>{article.category.icon}</span>
+                    <span className={styles.metaText}>{article.category.name}</span>
+                    <span className={styles.metaSeparator}>•</span>
+                    <span className={styles.metaText}>{article.author.name}</span>
+                    <span className={styles.metaSeparator}>•</span>
+                    <span className={styles.metaText}>
+                  {new Date(article.publishedAt!).toLocaleDateString('ru-RU')}
+                </span>
+                  </div>
+                  <h3 className={styles.articleTitle}>{article.title}</h3>
+                  {article.excerpt && (
+                      <p className={styles.articleExcerpt}>{article.excerpt}</p>
+                  )}
+                  <div className={styles.articleStats}>
+                <span className={styles.viewCount}>
+                  👁️ {article.viewCount} просмотров
+                </span>
+                  </div>
+                </article>
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
-  );
+  )
 }
