@@ -1,4 +1,3 @@
-// app/page.tsx
 import prisma from '@/lib/prisma'
 import styles from './page.module.scss'
 
