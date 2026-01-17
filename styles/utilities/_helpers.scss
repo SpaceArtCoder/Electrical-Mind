@@ -1,0 +1,84 @@
+@use '../abstracts/variables' as *;
+
+// Утилиты
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    max-width: $container-sm;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: $container-md;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: $container-lg;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: $container-xl;
+  }
+
+  @media (min-width: $breakpoint-2xl) {
+    max-width: $container-2xl;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Скроллбар (для webkit)
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary-light;
+
+  @media (prefers-color-scheme: dark) {
+    background: $bg-secondary-dark;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-light;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: $text-tertiary-light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: $border-dark;
+
+    &:hover {
+      background: $text-tertiary-dark;
+    }
+  }
+}
+
+// Выделение текста
+::selection {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: $text-primary-light;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: $text-primary-dark;
+  }
+}

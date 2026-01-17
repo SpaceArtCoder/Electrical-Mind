@@ -40,3 +40,25 @@ a {
     color-scheme: dark;
   }
 }
+
+
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// body {
+//   font-family: $font-sans;
+//   font-size: $text-base;
+//   line-height: $line-height-normal;
+//   color: $text-primary-light;
+//   background-color: $bg-secondary-light;
+//   overflow-x: hidden;
+
+//   @media (prefers-color-scheme: dark) {
+//     color: $text-primary-dark;
+//     background-color: $bg-primary-dark;
+//   }
+// }

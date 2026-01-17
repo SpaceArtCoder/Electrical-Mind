@@ -35,7 +35,7 @@ export default async function Home() {
             Electrical Mind
           </h1>
           <p className={styles.subtitle}>
-            Портал о высоких технологиях будущего
+            Портал о технологиях
           </p>
         </header>
 

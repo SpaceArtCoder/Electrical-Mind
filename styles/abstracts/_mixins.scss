@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as *;
+
+@mixin menu_toggle($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin img($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin nav_block($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin nav_links($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin li($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin a($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin h2($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@mixin read_more($px) {
+    @media (max-width: $px) {
+        @content;
+    }
+}
+
+@function get-breakpoint-value($bp-name) {
+  // Предполагается, что переменные $breakpoint-sm, $breakpoint-md и т.д. 
+  // доступны в области видимости.
+  @if $bp-name == sm { @return $breakpoint-sm; } 
+  @else if $bp-name == md { @return $breakpoint-md; }
+  @else if $bp-name == lg { @return $breakpoint-lg; }
+  @else if $bp-name == lgn { @return $breakpoint-lg-next; }
+  @else if $bp-name == xl { @return $breakpoint-xl; }
+  @else if $bp-name == xxl { @return $breakpoint-xxl; }
+  @else { @return $bp-name; } 
+}
+
+@mixin width-rage($min-bp, $max-bp) {
+    @media (min-width: get-breakpoint-value($min-bp)) and (max-width: get-breakpoint-value($max-bp)) {
+        @content;
+    }
+}
+
+@mixin max-width($bp) {
+    @media (max-width: get-breakpoint-value($bp)) {
+        @content;
+    }
+}
+
+@mixin min-height($bp) {
+    @media (min-height: get-breakpoint-value($bp)) {
+        @content;
+    }
+}
+
+@mixin min-width($bp) {
+    @media (min-width: get-breakpoint-value($bp)) {
+        @content;
+    }
+}
