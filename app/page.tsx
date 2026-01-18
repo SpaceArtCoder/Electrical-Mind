@@ -29,15 +29,7 @@ export default async function Home() {
 
   return (
       <main className={styles.container}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>
-            <span className={styles.titleIcon}>⚡</span>
-            Electrical Mind
-          </h1>
-          <p className={styles.subtitle}>
-            Портал о технологиях
-          </p>
-        </header>
+        
 
         {/* Категории */}
         <section className={styles.categoriesSection}>
