@@ -1,0 +1,14 @@
+<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Синий прямоугольник с текстом "Electrical" -->
+  <rect x="0" y="0" width="110" height="40" fill="#0033CC" rx="2"/>
+  
+  <!-- Текст "Electrical" белым цветом -->
+  <text x="55" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">
+    Electrical
+  </text>
+  
+  <!-- Текст "Mind" черным цветом -->
+  <text x="155" y="27" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1a1a1a" text-anchor="middle">
+    Mind
+  </text>
+</svg>
