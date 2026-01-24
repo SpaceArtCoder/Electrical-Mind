@@ -12,9 +12,14 @@ $gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 $gradient-dark: linear-gradient(135deg, #434343 0%, #000000 100%);
 
 // Текст
-$text-primary-light: #111827;
+$text-primary-light: #2e2c2ce5;
 $text-secondary-light: #6b7280;
 $text-tertiary-light: #9ca3af;
+
+:root {
+    --text-primary-light: #{$text-primary-light};
+}
+
 
 $text-primary-dark: #f9fafb;
 $text-secondary-dark: #9ca3af;

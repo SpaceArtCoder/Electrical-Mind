@@ -9,6 +9,18 @@
             display: flex;
             align-items: center;
             margin: 0;
+
+            .nav_link {
+                color: var(--text-primary-light);
+                font-weight:bold;
+                border-bottom: 2px solid transparent;
+                transition: border-color 0.3s;
+                padding: 0.8rem;
+
+                &:hover {
+                    border-bottom: 2px solid var(--text-primary-light);
+                }
+            }
         }
     }
 }

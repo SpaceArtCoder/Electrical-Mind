@@ -6,10 +6,10 @@ export default function Categories() {
         <nav className={styles.nav} aria-label='Main navigation'>
             <ul>
                 <li>
-                    <Link href='/news'>Новости</Link>
+                    <Link className={styles.nav_link} href='/news'>Новости</Link>
                 </li>
                 <li>
-                    <Link href='/about'>О проекте</Link>
+                    <Link className={styles.nav_link} href='/about'>О проекте</Link>
                 </li>
             </ul>
         </nav>
