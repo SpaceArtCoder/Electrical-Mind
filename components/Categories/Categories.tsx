@@ -11,6 +11,9 @@ export default function Categories() {
                 <li>
                     <Link className={styles.nav_link} href='/about'>О проекте</Link>
                 </li>
+                <li>
+                    <Link className={styles.nav_link} href='/contacts'>Контакты</Link>
+                </li>
             </ul>
         </nav>
     )
