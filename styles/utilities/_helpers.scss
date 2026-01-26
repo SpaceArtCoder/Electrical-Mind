@@ -75,10 +75,10 @@
 // Выделение текста
 ::selection {
   background-color: rgba(59, 130, 246, 0.2);
-  color: $text-primary-light;
+  color: var(--text-primary-light);
 
   @media (prefers-color-scheme: dark) {
     background-color: rgba(59, 130, 246, 0.3);
-    color: $text-primary-dark;
+    color: var(--text-primary-dark);
   }
 }

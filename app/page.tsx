@@ -28,11 +28,11 @@ export default async function Home() {
   ])
 
   return (
-      <main className={styles.container}>
+      <main className={styles.main_container}>
         
 
         {/* Категории */}
-        <section className={styles.categoriesSection}>
+        <section className={styles.current_news}>
           
         </section>
 

@@ -12,25 +12,21 @@ $gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 $gradient-dark: linear-gradient(135deg, #434343 0%, #000000 100%);
 
 // Текст
-$text-primary-light: #2e2c2ce5;
+// $text-primary-light: #2e2c2ce5;
 $text-secondary-light: #6b7280;
 $text-tertiary-light: #9ca3af;
 
-:root {
-    --text-primary-light: #{$text-primary-light};
-}
 
-
-$text-primary-dark: #f9fafb;
+// $text-primary-dark: #f9fafb;
 $text-secondary-dark: #9ca3af;
 $text-tertiary-dark: #6b7280;
 
 // Фоны
-$bg-primary-light: #ffffff;
+// $bg-primary-light: #ffffff;
 $bg-secondary-light: #f9fafb;
 $bg-tertiary-light: #f3f4f6;
 
-$bg-primary-dark: #111827;
+// $bg-primary-dark: #111827;
 $bg-secondary-dark: #1f2937;
 $bg-tertiary-dark: #374151;
 
@@ -124,3 +120,16 @@ $font-medium: 500;
 $font-semibold: 600;
 $font-bold: 700;
 $font-extrabold: 800;
+
+:root {
+    --text-primary-light: #2e2c2ce5;
+    --bg-primary-light: #d7d3d3ae;
+    
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary-dark: #111827;
+    --text-primary-dark: #f9fafb;
+  }
+}

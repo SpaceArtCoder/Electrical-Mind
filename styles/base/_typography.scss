@@ -143,8 +143,8 @@ select {
   padding: 0.75rem;
   border: 1px solid $border-light;
   border-radius: $radius-md;
-  background-color: $bg-primary-light;
-  color: $text-primary-light;
+  background-color: var(--bg-primary-light);
+  color: var(--text-primary-light);
   transition: $transition-fast;
 
   &:focus {
@@ -156,7 +156,7 @@ select {
   @media (prefers-color-scheme: dark) {
     background-color: $bg-secondary-dark;
     border-color: $border-dark;
-    color: $text-primary-dark;
+    color: var(--text-primary-dark);
 
     &:focus {
       border-color: $primary;
