@@ -1,4 +1,5 @@
 import prisma from '@/lib/prisma'
+import CurrentNews from '@/components/CurrentNews/CurrentNews'
 import styles from './page.module.scss'
 
 export const dynamic = 'force-dynamic'
@@ -29,14 +30,9 @@ export default async function Home() {
 
   return (
       <main className={styles.main_container}>
-        
+  
+        <CurrentNews/>
 
-        {/* Категории */}
-        <section className={styles.current_news}>
-          
-        </section>
-
-       
       </main>
   )
 }
