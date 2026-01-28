@@ -1,12 +1,32 @@
 .current_news {
     display: flex;
     width: 98%;
+    flex-direction: column;
+
+    .button {
+            // display: flex;
+            margin: auto;
+            width: 6rem;
+            background-color: rgb(55, 174, 12);
+            box-shadow: var(--shadow-2xl);
+            height: 3rem;              
+            border-radius: 1.5rem;     
+            transition: background-color 0.5s;
+            &:hover {
+                background-color: orange;
+            }
+    }
     
     form {
-        display: block;
+        display: none;
         margin: auto;
+        
+        input {
+            width: 30rem;
+            
+        }
         .button {
-            // display: flex;
+            margin: auto;
             width: 6rem;
             background-color: rgb(55, 174, 12);
             box-shadow: var(--shadow-2xl);
@@ -19,7 +39,7 @@
         }
     }
 
-    .hidden {
-        display: none;
+    .show {
+        display: flex;
     }
 }
