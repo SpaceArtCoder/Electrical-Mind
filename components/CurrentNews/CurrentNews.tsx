@@ -10,9 +10,6 @@ export default function CurrentNews({addArticle}) {
 
     const [newsList, setNewsList] = useState();
 
-    
-
-
     function toggleDisplay() {
       setVisibility(!visibllity)
     }
