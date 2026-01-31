@@ -1,18 +1,16 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {motion} from 'framer-motion'
 import styles from './CurrentNews.module.scss'
 
-export default function CurrentNews() {
+export default function CurrentNews({addArticle}) {
 
     const [visibllity, setVisibility] = useState(false);
 
-    function addArticle() {
+    const [newsList, setNewsList] = useState();
 
-    setVisibility(!visibllity)
     
-    }
 
 
     function toggleDisplay() {
@@ -27,9 +25,10 @@ export default function CurrentNews() {
           <form className={visibllity ? styles.show : ''} action={addArticle}>
 
             <motion.input 
+            name='content'
             className={visibllity ? styles.show : ''} 
             type='text'
-            placeholder='text'
+            placeholder='Write your text'
             animate={{
               height: visibllity ? 200 : 20,
 
