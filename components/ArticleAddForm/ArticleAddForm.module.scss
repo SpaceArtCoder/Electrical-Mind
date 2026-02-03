@@ -1,0 +1,42 @@
+.article_form {
+    .button {
+            // display: flex;
+            margin: auto;
+            width: 6rem;
+            background-color: rgb(55, 174, 12);
+            box-shadow: var(--shadow-2xl);
+            height: 3rem;              
+            border-radius: 1.5rem;     
+            transition: background-color 0.5s;
+            &:hover {
+                background-color: orange;
+            }
+    }
+    
+    form {
+        display: none;
+        margin: auto;
+        input {
+            width: 30rem;
+            
+        }
+        .button {
+            margin: auto;
+            width: 6rem;
+            background-color: rgb(55, 174, 12);
+            box-shadow: var(--shadow-2xl);
+            height: 3rem;              
+            border-radius: 1.5rem;     
+            transition: background-color 0.5s;
+            &:hover {
+                background-color: orange;
+            }
+        }
+    }
+}
+
+
+
+    .show {
+        display: flex;
+    }
