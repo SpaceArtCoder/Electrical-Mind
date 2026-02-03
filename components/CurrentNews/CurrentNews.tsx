@@ -3,7 +3,11 @@
 import ArticleAddForm from '../ArticleAddForm/ArticleAddForm'
 import styles from './CurrentNews.module.scss'
 
-export default function CurrentNews({addArticle}) {
+interface CurrentNewsProps {
+  addArticle: (formData: FormData) => Promise<void>
+}
+
+export default function CurrentNews({addArticle} : CurrentNewsProps) {
 
     return (
         <section className={styles.current_news}>
