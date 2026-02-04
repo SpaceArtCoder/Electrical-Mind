@@ -1,5 +1,3 @@
-
-
 import ArticleAddForm from '../ArticleAddForm/ArticleAddForm'
 import styles from './CurrentNews.module.scss'
 
