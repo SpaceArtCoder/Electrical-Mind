@@ -2,14 +2,9 @@
 
 import { useState } from 'react'
 import {motion} from 'framer-motion'
+import type {ArticleAddFormProps} from '@/lib/types/article'
 import styles from './ArticleAddForm.module.scss'
 
-
-// Define the interface for props
-interface ArticleAddFormProps {
-    // A server action is a function that takes FormData and returns a promise
-    addArticle: ( formData: FormData ) => Promise<void>;
-}
 
 export default function ArticleAddForm({addArticle} : ArticleAddFormProps) {
 
