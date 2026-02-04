@@ -1,9 +1,6 @@
 import ArticleAddForm from '../ArticleAddForm/ArticleAddForm'
+import type {CurrentNewsProps} from '@/lib/types/article'
 import styles from './CurrentNews.module.scss'
-
-interface CurrentNewsProps {
-  addArticle: (formData: FormData) => Promise<void>
-}
 
 export default function CurrentNews({addArticle} : CurrentNewsProps) {
 
