@@ -10,12 +10,17 @@ export default function CurrentNews({addArticle} : CurrentNewsProps) {
         {/* Test component */}
           {/* <ArticleAddForm addArticle={addArticle}/> */}
 
+        {/* Each block will contain four news items */}
             <div className={styles.first_block}>
+                <div>
 
+                </div>
             </div>
 
             <div className={styles.second_block}>
-                
+                <div>
+                    
+                </div>
             </div>
 
         </section>
