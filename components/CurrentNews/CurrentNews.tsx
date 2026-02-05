@@ -7,8 +7,16 @@ export default function CurrentNews({addArticle} : CurrentNewsProps) {
     return (
         <section className={styles.current_news}>
 
-          <ArticleAddForm addArticle={addArticle}/>
+        {/* Test component */}
+          {/* <ArticleAddForm addArticle={addArticle}/> */}
 
+            <div className={styles.first_block}>
+
+            </div>
+
+            <div className={styles.second_block}>
+                
+            </div>
 
         </section>
     )
