@@ -17,3 +17,11 @@ export interface CurrentNewsProps {
 export interface ArticleAddFormProps {
     addArticle: AddArticleAction;
 }
+
+/**
+ * Zustand store
+ */
+export interface ArticleState {
+    articles: any[],
+    setArticles: (articles: any[]) => void;
+}
