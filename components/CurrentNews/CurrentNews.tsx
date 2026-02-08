@@ -14,11 +14,10 @@ export default function CurrentNews({addArticle} : CurrentNewsProps) {
 
         {/* Test component */}
 
-        {articles.map(article => <div key={article.id}>{article.title}</div>)}
-          {/* <ArticleAddForm addArticle={addArticle}/> */}
+          <ArticleAddForm addArticle={addArticle}/>
 
         {/* Each block will contain four news items */}
-            <div className={styles.first_block}>
+            {/* <div className={styles.first_block}>
                 <div>
 
                 </div>
@@ -28,7 +27,7 @@ export default function CurrentNews({addArticle} : CurrentNewsProps) {
                 <div>
                     
                 </div>
-            </div>
+            </div> */}
 
         </section>
     )
