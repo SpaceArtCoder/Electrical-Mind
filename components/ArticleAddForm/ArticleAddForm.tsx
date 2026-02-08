@@ -1,18 +1,21 @@
 'use client'
 
+import { useArticleStore } from '@/store/useArticleStore'
 import { useState } from 'react'
 import {motion} from 'framer-motion'
-import type {ArticleAddFormProps} from '@/lib/types/article'
 import styles from './ArticleAddForm.module.scss'
 
 
-export default function ArticleAddForm({addArticle} : ArticleAddFormProps) {
+export default function ArticleAddForm() {
 
     const [visibllity, setVisibility] = useState(false);
+
+    const addArticle = useArticleStore((state) => state.addArticle);
 
     function toggleDisplay() {
       setVisibility(!visibllity)
     }
+
 
     return (
         <div className={styles.article_form}>

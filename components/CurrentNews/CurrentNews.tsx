@@ -1,11 +1,10 @@
 'use client'
 
 import ArticleAddForm from '../ArticleAddForm/ArticleAddForm'
-import type {CurrentNewsProps} from '@/lib/types/article'
 import styles from './CurrentNews.module.scss'
 import { useArticleStore } from '@/store/useArticleStore'
 
-export default function CurrentNews({addArticle} : CurrentNewsProps) {
+export default function CurrentNews() {
 
     const articles = useArticleStore((state) => state.articles);
 
@@ -14,7 +13,7 @@ export default function CurrentNews({addArticle} : CurrentNewsProps) {
 
         {/* Test component */}
 
-          <ArticleAddForm addArticle={addArticle}/>
+          <ArticleAddForm/>
 
         {/* Each block will contain four news items */}
             {/* <div className={styles.first_block}>

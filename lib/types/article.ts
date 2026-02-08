@@ -24,4 +24,8 @@ export interface ArticleAddFormProps {
 export interface ArticleState {
     articles: any[],
     setArticles: (articles: any[]) => void;
+    /**
+     * The action called by the form to trigger the server-side logic.
+     */
+    addArticle: (formData: FormData) => Promise<void>;
 }
