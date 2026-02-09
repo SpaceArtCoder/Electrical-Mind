@@ -28,4 +28,6 @@ export interface ArticleState {
      * The action called by the form to trigger the server-side logic.
      */
     addArticle: (formData: FormData) => Promise<void>;
+    deleteArticle: (id: string) => Promise<void>;
+    editArticle: (id: string, formData: FormData) => Promise<void>;
 }
