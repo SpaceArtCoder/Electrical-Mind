@@ -34,14 +34,14 @@ export async function addArticleAction(formData: FormData) {
  * Deleting an article from the DB
  */
 
-export default function deleteArticleAction(id: string) {
+export async function deleteArticleAction(id: string) {
 
   await prisma.article.delete({
     where: {id},
   });
 
-  revalidateParh('/'); // Refresh the UI to reflect the deletion
-  
+  revalidatePath('/'); // Refresh the UI to reflect the deletion
+
 }
 
 
