@@ -27,7 +27,6 @@ export async function addArticleAction(formData: FormData) {
     });
 
     revalidatePath('/'); // Refresh the data on the page
-    
 }
 
 /**
@@ -41,11 +40,23 @@ export async function deleteArticleAction(id: string) {
   });
 
   revalidatePath('/'); // Refresh the UI to reflect the deletion
-
 }
-
-
 
 /**
  * Editing an existing article in the DB
  */
+
+export async function editArticleAction(id: string, formData: FormData) {
+  const contentText = formData.get("content") as string;
+  const titleText = formData.get("title") as string;
+
+  await prisma.article.update({
+    where: {id},
+    data: {
+      title: titleText || "Updated Title",
+      content: contentText,
+    },
+  });
+
+  revalidatePath('/');
+}
