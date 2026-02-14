@@ -3,6 +3,7 @@
 import { useArticleStore } from '@/store/useArticleStore'
 import { useState } from 'react'
 import {motion} from 'framer-motion'
+import ArticleOut from '@/components/ArticleOut/ArticleOut'
 import styles from './ArticleAddForm.module.scss'
 
 
@@ -43,6 +44,8 @@ export default function ArticleAddForm() {
             <button className={styles.button} type="submit">Send</button>
 
           </form>
+
+          <ArticleOut/>
         </div>
     )
 }
