@@ -1,3 +1,4 @@
+import prisma from '@/lib/prisma';
 import CurrentNews from '@/components/CurrentNews/CurrentNews'
 import styles from './page.module.scss'
 

@@ -60,3 +60,11 @@ export async function editArticleAction(id: string, formData: FormData) {
 
   revalidatePath('/');
 }
+
+export async function getArticlesAction() {
+  // Fetch data from the DB
+
+  const articles = await prisma.article.findMany();
+
+  return articles;
+}
