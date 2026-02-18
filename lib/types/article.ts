@@ -23,7 +23,11 @@ export interface ArticleAddFormProps {
  */
 export interface ArticleState {
     articles: any[],
-    setArticles: (articles: any[]) => void;
+    /**
+     * 
+     * The function called to refresh the store with the DB data
+     */
+    fetchArticles: () => Promise<void>
     /**
      * The action called by the form to trigger the server-side logic.
      */
