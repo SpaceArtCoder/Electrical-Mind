@@ -1,12 +1,22 @@
 'use client'
 
+import { useEffect } from 'react';
 import styles from './ArticleOut.module.scss'
 import { useArticleStore } from '@/store/useArticleStore';
 
 export default function ArticleOut() {
-    // Get the articles from the store
 
+    // Get the articles from the store
     const articles = useArticleStore((state) => state.articles);
+
+    // Execute the fetch function from the store
+    const fetchArticles = useArticleStore((state) => state.fetchArticles);
+
+    // Trigger the fetch on mount
+    useEffect(() => {
+        fetchArticles();
+    }, [fetchArticles]);
+
 
     return (
         <div className={styles.article_out}>
