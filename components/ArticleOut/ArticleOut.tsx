@@ -15,7 +15,7 @@ export default function ArticleOut() {
     // Trigger the fetch on mount
     useEffect(() => {
         fetchArticles();
-    }, [fetchArticles]);
+    }, []);
 
 
     return (
