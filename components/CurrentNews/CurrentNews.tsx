@@ -10,23 +10,15 @@ export default function CurrentNews() {
 
     return (
         <section className={styles.current_news}>
+            <div className={styles.main_news}>
 
-        {/* Test component */}
-
-          <ArticleAddForm/>
-
-        {/* Each block will contain four news items */}
-            {/* <div className={styles.first_block}>
-                <div>
-
-                </div>
             </div>
 
-            <div className={styles.second_block}>
-                <div>
-                    
-                </div>
-            </div> */}
+          { /* Test component */ }
+          {/* <ArticleAddForm/> */}
+
+        
+    
 
         </section>
     )
