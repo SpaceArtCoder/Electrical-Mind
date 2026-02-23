@@ -1,10 +1,18 @@
+@use '@/styles/abstracts/_mixins.scss';
+
 .nav {
     display: flex;
     margin-right: 5rem;
+
     ul {
         display: flex;
         gap: 2rem;
         margin: 0;
+
+        @include mixins.max-width(sm) {
+            flex-direction: column;                         // Categories are one under the other
+        }
+
         li {
             display: flex;
             align-items: center;
