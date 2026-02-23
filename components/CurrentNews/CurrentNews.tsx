@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import ArticleAddForm from '../ArticleAddForm/ArticleAddForm'
-import styles from './CurrentNews.module.scss'
 import { useArticleStore } from '@/store/useArticleStore'
+import styles from './CurrentNews.module.scss'
 
 export default function CurrentNews() {
 
@@ -19,7 +19,7 @@ export default function CurrentNews() {
         <section className={styles.current_news}>
             <div className={styles.main_news}>
                 {articles.map((article) => (
-                    <div key={article.key}>{article.content}</div>
+                    <div key={article.id}>{article.content}</div>
                 ))}
             </div>
 

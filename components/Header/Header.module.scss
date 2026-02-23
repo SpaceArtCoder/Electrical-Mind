@@ -1,7 +1,12 @@
+@use '@/styles/abstracts/_mixins.scss';
+
 .header {
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     
+    @include mixins.max-width(sm) {
+        width: 100vw;
+    }
 }
