@@ -9,5 +9,10 @@
     @include mixins.max-width(sm) {
         width: 100vw;
         flex-direction: column;
+
+        a {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
