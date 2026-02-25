@@ -4,6 +4,10 @@
     display: flex;
     margin-right: 5rem;
 
+    @include mixins.max-width(sm) {
+        margin: auto;                                       // Navigation links are centered
+    }
+
     ul {
         display: flex;
         gap: 2rem;
@@ -17,6 +21,10 @@
             display: flex;
             align-items: center;
             margin: 0;
+
+            @include mixins.max-width(sm) {
+                
+            }
 
             .nav_link {
                 color: var(--text-primary-light);
