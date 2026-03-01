@@ -7,7 +7,9 @@
 
     .main_news {
 
-        
+        @include mixins.max-width(sm) {
+            display: flex;
+        }
         div {
             @include mixins.max-width(sm) {
                 // margin: auto;
