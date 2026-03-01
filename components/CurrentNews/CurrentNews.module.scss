@@ -1,5 +1,18 @@
+@use '@/styles/abstracts/_mixins.scss';
+
 .current_news {
     display: flex;
     width: 98%;
     flex-direction: column;
+
+    .main_news {
+
+        
+        div {
+            @include mixins.max-width(sm) {
+                // margin: auto;
+                width: 90%;
+            }
+        }
+    }
 }
