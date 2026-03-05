@@ -8,7 +8,7 @@
     .main_news {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        
+        grid-template-rows: 30%;
         
 
         @include mixins.max-width(sm) {
