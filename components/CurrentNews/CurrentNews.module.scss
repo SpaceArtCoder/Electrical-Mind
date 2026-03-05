@@ -6,6 +6,7 @@
     flex-direction: column;
 
     .main_news {
+        display: grid;
 
         @include mixins.max-width(sm) {
             display: flex;
