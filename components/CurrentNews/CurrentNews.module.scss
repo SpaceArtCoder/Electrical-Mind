@@ -9,6 +9,8 @@
 
         @include mixins.max-width(sm) {
             display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         div {
             @include mixins.max-width(sm) {
