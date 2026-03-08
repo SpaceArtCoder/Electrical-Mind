@@ -1,9 +1,13 @@
 import Link from 'next/link';
+import Navicon from '@/components/Navicon/Navicon'
 import styles from './Categories.module.scss';
 
 export default function Categories() {
     return (
         <nav className={styles.nav} aria-label='Main navigation'>
+
+            <Navicon/>
+
             <ul>
                 <li>
                     <Link className={styles.nav_link} href='/news'>Новости</Link>
