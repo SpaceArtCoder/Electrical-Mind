@@ -9,7 +9,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 30%;
-        
+        gap: 1rem;
 
         @include mixins.max-width(sm) {
             display: flex;
