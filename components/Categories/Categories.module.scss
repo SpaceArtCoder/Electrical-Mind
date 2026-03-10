@@ -6,6 +6,7 @@
 
     @include mixins.max-width(sm) {
         margin: auto;                                       // Navigation links are centered
+        flex-direction: column;                             // Navicon component is above nav
     }
 
     ul {
