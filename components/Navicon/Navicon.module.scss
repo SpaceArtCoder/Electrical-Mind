@@ -5,5 +5,9 @@
     @include mixins.max-width(sm) {
         outline: 1px solid black;
         width: 3rem;
+
+        svg {
+            margin: auto;
+        }
     }
 }
