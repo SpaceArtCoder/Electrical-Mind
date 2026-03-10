@@ -16,7 +16,8 @@
 
         @include mixins.max-width(sm) {
             flex-direction: column;                         // Categories are one under the other
-        }
+            display: none;                                  // The ul is hidden until clicked 
+        }                                                   // Navicon button
 
         li {
             display: flex;
