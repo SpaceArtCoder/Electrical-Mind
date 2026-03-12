@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import Navicon from '@/components/Navicon/Navicon'
 import styles from './Categories.module.scss';
+import { useState } from 'react';
 
 export default function Categories() {
+
+    const [openNav, setOpenNav] = useState(false);
+    
     return (
         <nav className={styles.nav} aria-label='Main navigation'>
 
