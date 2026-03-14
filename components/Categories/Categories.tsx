@@ -16,7 +16,7 @@ export default function Categories() {
     return (
         <nav className={styles.nav} aria-label='Main navigation'>
 
-            <Navicon/>
+            <Navicon show_nav={show_categories} display={openNav}/>
 
             <ul>
                 <li>
