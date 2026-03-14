@@ -7,6 +7,10 @@ import { useState } from 'react';
 
 export default function Categories() {
 
+    function show_categories() {
+        
+    }
+
     const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
                                                                                 // for mobile
     return (
