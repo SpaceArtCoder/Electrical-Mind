@@ -8,7 +8,7 @@ import { useState } from 'react';
 export default function Categories() {
 
     function show_categories() {
-        
+        setOpenNav(true);
     }
 
     const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
