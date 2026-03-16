@@ -1,5 +1,6 @@
 'use client'
 
+import { morion } from 'framer-motion'
 import Link from 'next/link';
 import Navicon from '@/components/Navicon/Navicon'
 import styles from './Categories.module.scss';
