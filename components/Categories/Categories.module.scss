@@ -9,14 +9,13 @@
         flex-direction: column;                             // Navicon component is above nav
     }
 
-    ul {
+    .navigation {
         display: flex;
         gap: 2rem;
         margin: 0;
 
         @include mixins.max-width(sm) {
             flex-direction: column;                         // Categories are one under the other
-            display: none;                                  // The ul is hidden until clicked 
         }                                                   // Navicon button
 
         li {
@@ -41,4 +40,8 @@
             }
         }
     }
+}
+
+.hide_navigation {
+    display: none;
 }

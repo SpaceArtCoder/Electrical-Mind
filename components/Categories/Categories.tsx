@@ -18,7 +18,7 @@ export default function Categories() {
 
             <Navicon show_nav={show_categories} display={openNav}/>
 
-            <ul>
+            <ul className={openNav ? styles.navigation : styles.hide_navigation}>
                 <li>
                     <Link className={styles.nav_link} href='/news'>Новости</Link>
                 </li>
