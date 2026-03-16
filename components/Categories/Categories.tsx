@@ -1,6 +1,6 @@
 'use client'
 
-import { morion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link';
 import Navicon from '@/components/Navicon/Navicon'
 import styles from './Categories.module.scss';
@@ -19,7 +19,11 @@ export default function Categories() {
 
             <Navicon show_nav={show_categories} display={openNav}/>
 
-            <ul className={openNav ? styles.navigation : styles.hide_navigation}>
+            <motion.ul className={openNav ? styles.navigation : styles.hide_navigation} 
+            animate={{height : openNav ? 200 : 0}} transition={{type: "spring",
+                stiffness: 300,
+                damping: 20
+            }}>
                 <li>
                     <Link className={styles.nav_link} href='/news'>Новости</Link>
                 </li>
@@ -29,7 +33,7 @@ export default function Categories() {
                 <li>
                     <Link className={styles.nav_link} href='/contacts'>Контакты</Link>
                 </li>
-            </ul>
+            </motion.ul>
         </nav>
     )
 }
