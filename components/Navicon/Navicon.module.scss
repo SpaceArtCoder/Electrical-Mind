@@ -1,8 +1,9 @@
 @use '@/styles/abstracts/_mixins.scss';
 
 .navicon_button {
-
+        display: none;
     @include mixins.max-width(sm) {
+        
         outline: 1px solid black;
         width: 3rem;
         margin: auto;                       
