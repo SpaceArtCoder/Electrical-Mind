@@ -2,8 +2,9 @@
 
 .navicon_button {
         display: none;
+
     @include mixins.max-width(sm) {
-        
+        display: flex;
         outline: 1px solid black;
         width: 3rem;
         margin: auto;                       
