@@ -19,7 +19,7 @@ export default function Categories() {
 
             <Navicon show_nav={show_categories} display={openNav}/>
 
-            <motion.ul className={openNav ? styles.navigation : styles.hide_navigation} 
+            <motion.ul className={openNav ? styles.navigation : `${styles.navigation} ${styles.hide_navigation}`} 
             animate={{height : openNav ? 200 : 0}} transition={{type: "spring",
                 stiffness: 300,
                 damping: 20

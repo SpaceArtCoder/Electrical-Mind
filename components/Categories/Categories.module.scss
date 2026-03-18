@@ -39,9 +39,12 @@
                 }
             }
         }
+
     }
 }
 
 .hide_navigation {
-    display: none;
+    @include mixins.max-width(sm) {
+        display: none;
+    }
 }
