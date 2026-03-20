@@ -16,7 +16,7 @@
 
         @include mixins.max-width(sm) {
             flex-direction: column;                         // Categories are one under the other
-        }                                                   // Navicon button
+        }                                                   
 
         li {
             display: flex;
@@ -43,7 +43,7 @@
     }
 
 
-    @include mixins.max-width(sm) {
+    @include mixins.max-width(sm) {                         // Categories are hidden by default      
         .hide_navigation {
             display: none;
         }
