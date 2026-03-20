@@ -41,10 +41,12 @@
         }
 
     }
-}
 
-.hide_navigation {
+
     @include mixins.max-width(sm) {
-        display: none;
+        .hide_navigation {
+            display: none;
+        }
     }
 }
+
