@@ -4,12 +4,22 @@ import { motion } from 'framer-motion'
 import Link from 'next/link';
 import Navicon from '@/components/Navicon/Navicon'
 import styles from './Categories.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Categories() {
 
+    const [isMenu, setIsMenu] = useState(false);
+
+    useEffect(() => {
+        
+
+        
+    }, []);
+
     function show_categories() {
         setOpenNav(true);
+        
+
     }
 
     const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
