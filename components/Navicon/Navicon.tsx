@@ -1,7 +1,7 @@
 import type { NaviconProps } from '@/lib/types/ui'
 import styles from './Navicon.module.scss'
 
-export default function Navicon({show_nav, display}: NaviconProps) {
+export default function Navicon({show_nav, display, hide_menu}: NaviconProps) {
 
     return (
         <button className={!display ? styles.navicon_button : styles.hide} onClick={() => show_nav()}>

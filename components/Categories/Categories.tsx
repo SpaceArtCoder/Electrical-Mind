@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 export default function Categories() {
 
-    const [isMenu, setIsMenu] = useState(false);
+    // const [isMenu, setIsMenu] = useState(false);
 
     useEffect(() => {
         
@@ -27,7 +27,7 @@ export default function Categories() {
     return (
         <nav className={styles.nav} aria-label='Main navigation'>
 
-            <Navicon show_nav={show_categories} display={openNav} hideMenu={setIsMenu}/>
+            <Navicon show_nav={show_categories} display={openNav} hide_menu={setIsMenu}/>
 
             <motion.ul className={openNav ? styles.navigation : `${styles.navigation} ${styles.hide_navigation}`} 
             animate={{height : openNav ? 200 : 60}} transition={{type: "spring",
