@@ -8,18 +8,18 @@ import { useEffect, useState } from 'react';
 
 export default function Categories() {
 
-    // const [isMenu, setIsMenu] = useState(false);
-
+    // Hide nav menu after click
     useEffect(() => {
-        
+        // Only attach the listener if it's actually needed
+        if (!openNav) return;
+
+
 
         
     }, []);
 
     function show_categories() {
         setOpenNav(true);
-        
-
     }
 
     const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
