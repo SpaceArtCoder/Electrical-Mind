@@ -8,6 +8,9 @@ import { useEffect, useState } from 'react';
 
 export default function Categories() {
 
+    const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
+                                                                                // for mobile
+
     // Hide nav menu after click
     useEffect(() => {
         // Only attach the listener if it's actually needed
@@ -26,14 +29,13 @@ export default function Categories() {
             document.body.removeEventListener('click', handleBodyClick);
         } 
 
-    }, []);
+    }, [openNav]);
 
     function show_categories() {
         setOpenNav(true);
     }
 
-    const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
-                                                                                // for mobile
+
     return (
         <nav className={styles.nav} aria-label='Main navigation'>
 
