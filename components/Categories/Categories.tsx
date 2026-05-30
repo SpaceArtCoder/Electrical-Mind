@@ -13,6 +13,13 @@ export default function Categories() {
         // Only attach the listener if it's actually needed
         if (!openNav) return;
 
+        // Define the event listener
+        const handleBodyClick = (event: MouseEvent) => {
+            setOpenNav(false);
+        }
+
+        
+
 
 
         
