@@ -21,9 +21,11 @@ export default function Categories() {
         // Attach the listener to body
         document.body.addEventListener('click', handleBodyClick);
 
+        // Clear effect
+        return () => {
+            document.body.removeEventListener('click', handleBodyClick);
+        } 
 
-
-        
     }, []);
 
     function show_categories() {
