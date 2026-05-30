@@ -10,7 +10,6 @@ export default function Categories() {
 
     const [openNav, setOpenNav] = useState(false);                              // The nav menu is hidden by default
                                                                                 // for mobile
-
     // Hide nav menu after click
     useEffect(() => {
         // Only attach the listener if it's actually needed
