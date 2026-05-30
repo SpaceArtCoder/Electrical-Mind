@@ -27,7 +27,7 @@ export default function Categories() {
     return (
         <nav className={styles.nav} aria-label='Main navigation'>
 
-            <Navicon show_nav={show_categories} display={openNav} hide_menu={setIsMenu}/>
+            <Navicon show_nav={show_categories} isNav={openNav}/>
 
             <motion.ul className={openNav ? styles.navigation : `${styles.navigation} ${styles.hide_navigation}`} 
             animate={{height : openNav ? 200 : 60}} transition={{type: "spring",
