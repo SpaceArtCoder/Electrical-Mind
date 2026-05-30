@@ -18,7 +18,8 @@ export default function Categories() {
             setOpenNav(false);
         }
 
-        
+        // Attach the listener to body
+        document.body.addEventListener('click', handleBodyClick);
 
 
 
