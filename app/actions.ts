@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
  * 
  * Adding an article to the DB
  */
-
+// NEEDED TO ADD IMAGES URL's HERE
 export async function addArticleAction(formData: FormData) {
     const contentText = formData.get("content") as string;
 
