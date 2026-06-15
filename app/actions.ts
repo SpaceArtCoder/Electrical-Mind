@@ -11,6 +11,7 @@ import { revalidatePath } from "next/cache";
 export async function addArticleAction(formData: FormData) {
     const titleText = formData.get("title") as string;
     const contentText = formData.get("content") as string;
+    const excerptText = formData.get("excerpt") as string || null;
 
     await prisma.article.create({
           data: {
