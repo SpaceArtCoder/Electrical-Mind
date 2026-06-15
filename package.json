@@ -20,6 +20,7 @@
     "dotenv": "^17.2.3",
     "framer-motion": "^12.29.2",
     "next": "^16.1.6",
+    "next-cloudinary": "^6.17.5",
     "pg": "^8.16.3",
     "prisma": "^5.22.0",
     "react": "^19.2.4",

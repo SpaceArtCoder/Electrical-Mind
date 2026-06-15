@@ -9,6 +9,7 @@ import { revalidatePath } from "next/cache";
  */
 // NEEDED TO ADD IMAGES URL's HERE
 export async function addArticleAction(formData: FormData) {
+    const titleText = formData.get("title") as string;
     const contentText = formData.get("content") as string;
 
     await prisma.article.create({
