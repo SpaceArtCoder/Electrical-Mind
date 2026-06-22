@@ -13,6 +13,9 @@ export async function addArticleAction(formData: FormData) {
     const contentText = formData.get("content") as string;
     const excerptText = formData.get("excerpt") as string || null;
 
+    // Extract the secure Cloudinary URL string from the form
+    const coverImageText = formData.get("coverImage") as string || null;
+
     await prisma.article.create({
           data: {
             title: "User Article",
