@@ -16,6 +16,14 @@ export async function addArticleAction(formData: FormData) {
     // Extract the secure Cloudinary URL string from the form
     const coverImageText = formData.get("coverImage") as string || null;
 
+    // Generate a basic URL-safe slug from the title or fallback to timestamp
+    const generatedSlug = titleText
+      ? titleText.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + `-${Date.now()}`
+      : `article-${Date.now()}`;
+
+      
+
+
     await prisma.article.create({
           data: {
             title: "User Article",
