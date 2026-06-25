@@ -21,12 +21,10 @@ export async function addArticleAction(formData: FormData) {
       ? titleText.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + `-${Date.now()}`
       : `article-${Date.now()}`;
 
-      
-
 
     await prisma.article.create({
           data: {
-            title: "User Article",
+            title: titleText || "User Article",
             slug: `article-${Date.now()}`,
             excerpt: 'user content',
             content: contentText,
