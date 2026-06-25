@@ -28,6 +28,7 @@ export async function addArticleAction(formData: FormData) {
             slug: generatedSlug,
             excerpt: excerptText,
             content: contentText,
+            coverImage: coverImageText,
             author: {
               connect: {id : 'cmka7wrt9000452o3hawfuawr'}
             },
