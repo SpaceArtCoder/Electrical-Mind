@@ -25,7 +25,7 @@ export async function addArticleAction(formData: FormData) {
     await prisma.article.create({
           data: {
             title: titleText || "User Article",
-            slug: `article-${Date.now()}`,
+            slug: generatedSlug,
             excerpt: 'user content',
             content: contentText,
             author: {
