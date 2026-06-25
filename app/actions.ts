@@ -31,10 +31,11 @@ export async function addArticleAction(formData: FormData) {
             coverImage: coverImageText,
             status: "published",
             author: {
+              // Uses existing User CUID string
               connect: {id : 'cmka7wrt9000452o3hawfuawr'}
             },
             category: {
-              connect: {id : '1'}
+              connect: {id : 'cmkcategory_example_id'}
             }
           }
     });
