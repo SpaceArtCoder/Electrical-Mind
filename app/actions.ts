@@ -26,7 +26,7 @@ export async function addArticleAction(formData: FormData) {
           data: {
             title: titleText || "User Article",
             slug: generatedSlug,
-            excerpt: 'user content',
+            excerpt: excerptText,
             content: contentText,
             author: {
               connect: {id : 'cmka7wrt9000452o3hawfuawr'}
