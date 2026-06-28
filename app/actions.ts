@@ -73,6 +73,7 @@ export async function editArticleAction(id: string, formData: FormData) {
     data: {
       title: titleText || "Updated Title",
       content: contentText || undefined,
+      excerpt: excerptText || undefined,
     },
   });
 
