@@ -2,6 +2,7 @@
 
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { Underdog } from "next/font/google";
 
 /**
  * 
@@ -65,6 +66,7 @@ export async function editArticleAction(id: string, formData: FormData) {
   const titleText = formData.get("title") as string;
 
   const excerptText = formData.get("excerpt") as string;
+  const coverImageText = formData.get("coverImage") as string || underfined;
 
   await prisma.article.update({
     where: {id},
