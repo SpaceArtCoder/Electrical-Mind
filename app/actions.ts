@@ -64,6 +64,8 @@ export async function editArticleAction(id: string, formData: FormData) {
   const contentText = formData.get("content") as string;
   const titleText = formData.get("title") as string;
 
+  const excerptText = formData.get("excerpt") as string;
+
   await prisma.article.update({
     where: {id},
     data: {
