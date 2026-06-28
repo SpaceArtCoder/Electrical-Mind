@@ -66,13 +66,13 @@ export async function editArticleAction(id: string, formData: FormData) {
   const titleText = formData.get("title") as string;
 
   const excerptText = formData.get("excerpt") as string;
-  const coverImageText = formData.get("coverImage") as string || underfined;
+  const coverImageText = formData.get("coverImage") as string || undefined;
 
   await prisma.article.update({
     where: {id},
     data: {
       title: titleText || "Updated Title",
-      content: contentText,
+      content: contentText || undefined,
     },
   });
 
