@@ -74,6 +74,8 @@ export async function editArticleAction(id: string, formData: FormData) {
       title: titleText || "Updated Title",
       content: contentText || undefined,
       excerpt: excerptText || undefined,
+      // If coverImageText is underfined (not sent by form), Prisma won't touch the existing banner
+      ...(coverImageText != undefined && {coverImage: coverImageText}),
     },
   });
 
