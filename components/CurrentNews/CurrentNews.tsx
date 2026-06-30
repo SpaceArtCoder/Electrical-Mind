@@ -24,7 +24,7 @@ export default function CurrentNews() {
             </div>
 
           { /* Test component */ }
-          {/* <ArticleAddForm/> */}
+          <ArticleAddForm/>
 
         
     

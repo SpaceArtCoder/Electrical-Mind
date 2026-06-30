@@ -6,6 +6,7 @@ import {motion} from 'framer-motion'
 import ArticleOut from '@/components/ArticleOut/ArticleOut'
 import styles from './ArticleAddForm.module.scss'
 
+import { CldUploadButton } from 'next-cloudinary';
 
 export default function ArticleAddForm() {
 
@@ -17,10 +18,12 @@ export default function ArticleAddForm() {
       setVisibility(!visibllity)
     }
 
+    const [coverImageUrl, setCoverImageUrl] = useState<string>('');
+
 
     return (
         <div className={styles.article_form}>
-            <button className={styles.button} onClick={toggleDisplay}>Add Article</button>
+            {/* <button className={styles.button} onClick={toggleDisplay}>Add Article</button>
           
           <form className={visibllity ? styles.show : ''} action={addArticle}>
 
@@ -45,7 +48,9 @@ export default function ArticleAddForm() {
 
           </form>
 
-          <ArticleOut/>
+          <ArticleOut/> */}
+
+          
         </div>
     )
 }
