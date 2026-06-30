@@ -84,8 +84,9 @@ export async function editArticleAction(id: string, formData: FormData) {
 
 export async function getArticlesAction() {
   // Fetch data from the DB
-
-  const articles = await prisma.article.findMany();
+  const articles = await prisma.article.findMany({
+    orderBy: {createdAt: 'desc'}, // Show newest articles first
+  });
 
   return articles;
 }
