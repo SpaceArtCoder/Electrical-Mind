@@ -19,6 +19,7 @@
         div {
             @include mixins.max-width(sm) {
                 width: 90%;
+                margin: auto;
             }
         }
     }
