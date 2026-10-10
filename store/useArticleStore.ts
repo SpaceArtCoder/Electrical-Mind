@@ -10,7 +10,6 @@ export const useArticleStore = create<ArticleState>((set) => ({
         set({articles: data}); // Save the received JSON into the store
 
     },
-    // setArticles: (newArticles) => set({articles: newArticles}),
 
     addArticle: async (formData: FormData) => {
         await addArticleAction(formData); // Call the server-side prisma logic
