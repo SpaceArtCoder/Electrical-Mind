@@ -2,7 +2,6 @@
 
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-// import { Underdog } from "next/font/google";
 
 /**
  * 
@@ -77,7 +76,7 @@ export async function editArticleAction(id: string, formData: FormData) {
       // If coverImageText is underfined (not sent by form), Prisma won't touch the existing banner
       ...(coverImageText != undefined && {coverImage: coverImageText}),
     },
-  });
+  });  
 
   revalidatePath('/');
 }
